@@ -38,4 +38,4 @@ else
     echo "test-simple_hv failed"
 fi
 
-echo "Total score: $score"
+echo "$score"
