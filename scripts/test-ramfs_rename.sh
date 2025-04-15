@@ -23,7 +23,7 @@ cat $tmp_file
 rm -rf $tmp_file 
 
 if [[ -z "$output" ]] ;then
-    echo "ramfs_rename default"
+    echo "ramfs_rename fault"
     exit 1
 else 
     echo "ramfs_rename pass"

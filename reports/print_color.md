@@ -7,16 +7,16 @@
 ```rust
 /// Writes a byte to the console.
 pub fn putchar(c: u8) {
-    #[allow(deprecated)]
-    for b in b"\x1b[31m" {
-        sbi_rt::legacy::console_putchar(*b as usize);
-    }
+    // #[allow(deprecated)]
+    // for b in b"\x1b[31m" {
+    //     sbi_rt::legacy::console_putchar(*b as usize);
+    // }
     #[allow(deprecated)]
     sbi_rt::legacy::console_putchar(c as usize);
-    #[allow(deprecated)]
-    for b in b"\x1b[31m" {
-        sbi_rt::legacy::console_putchar(*b as usize);
-    }
+    // #[allow(deprecated)]
+    // for b in b"\x1b[31m" {
+    //     sbi_rt::legacy::console_putchar(*b as usize);
+    // }
 }
 ```
 
