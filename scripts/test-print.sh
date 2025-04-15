@@ -9,9 +9,9 @@ cd arceos/ || exit
 # make disk_img
 
 
-# make run A=exercises/print_with_color/ > a.txt 2>/dev/null
+make run A=exercises/print_with_color/ > a.txt
 
-make run A=exercises/print_with_color/ | tee a.txt >/dev/null
+# make run A=exercises/print_with_color/ | tee a.txt >/dev/null
 sleep 1  # 给 qemu 稍微缓一缓
 # context=$(cat a.txt)  # 不用 tail，直接取全部
 
