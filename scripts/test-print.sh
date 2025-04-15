@@ -9,14 +9,18 @@ cd arceos/ || exit
 # make disk_img
 
 
-make run A=exercises/print_with_color/ > a.txt 2>/dev/null
+# make run A=exercises/print_with_color/ > a.txt 2>/dev/null
 
-context=$(tail -n17 ./a.txt )
+make run A=exercises/print_with_color/ | tee a.txt >/dev/null
+sleep 1  # 给 qemu 稍微缓一缓
+# context=$(cat a.txt)  # 不用 tail，直接取全部
+
+context=$(tail -n 30 ./a.txt )
 
 has_color=false
 has_text=false
 
-echo $context > b.txt
+echo "$context" > b.txt
 
 if [[ "$context" == *$'\x1b['* ]]; then
     echo "Has color"
@@ -41,7 +45,7 @@ cat b.txt
 echo "change "
 cat c.txt
 
-rm a.txt b.txt c.txt-f
+# rm a.txt b.txt c.txt -f
 
 if [[ "$has_color" == true && "$has_text" == true ]]; then
     echo "print_with_color pass"
