@@ -4,8 +4,6 @@ score=0
 
 rm -f $file_name
 
-
-
 touch  $file_name
 
 if ./scripts/test-print.sh ; then
