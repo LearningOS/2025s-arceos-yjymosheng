@@ -21,6 +21,9 @@ if [[ "$context" == *$'\x1b['* ]]; then
     has_color=true
 
     sed_context=$(echo "$context" | sed 's/\x1b\[[0-9;]*m//g')
+
+    echo "$sed_context"
+
     if echo "$sed_context" | grep -q "Hello, Arceos!"; then
         echo "Has Hello, Arceos!"
         has_text=true
