@@ -64,8 +64,6 @@ jobs:
           cargo --version
           chmod -R +x scripts/
           
-          ./scripts/total-test.sh
-
           ./scripts/total-test.sh > tmp.txt
           score=$(cat tmp.txt | tail -n1)
           echo $score
