@@ -9,7 +9,7 @@ cd arceos/ || exit
 # make disk_img
 
 
-make run A=exercises/print_with_color/ > a.txt
+make run A=exercises/print_with_color/ > a.txt 2>&1
 
 # make run A=exercises/print_with_color/ | tee a.txt >/dev/null
 sleep 1  # 给 qemu 稍微缓一缓
