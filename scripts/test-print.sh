@@ -2,11 +2,11 @@
 
 cd arceos/ || exit
 
-# rm pflash.img -f 
-# rm disk.img -f
+rm pflash.img -f 
+rm disk.img -f
 
-# make pflash_img
-# make disk_img
+make pflash_img
+make disk_img
 
 
 make run A=exercises/print_with_color/ > a.txt 2>&1
