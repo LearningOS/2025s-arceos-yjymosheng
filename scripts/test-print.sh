@@ -40,6 +40,9 @@ else
     echo "No color"
 fi
 
+cat a.txt
+
+echo "change "
 
 cat b.txt 
 echo "change "
