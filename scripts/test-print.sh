@@ -16,15 +16,17 @@ context=$(tail -n17 ./a.txt )
 has_color=false
 has_text=false
 
+echo $context > b.txt
+
 if [[ "$context" == *$'\x1b['* ]]; then
     echo "Has color"
     has_color=true
 
     sed_context=$(echo "$context" | sed 's/\x1b\[[0-9;]*m//g')
 
-    echo "$sed_context"
+    echo "$sed_context" > c.txt
 
-    if echo "$sed_context" | grep -q "Hello, Arceos!"; then
+    if grep -q "Hello, Arceos!" c.txt ; then
         echo "Has Hello, Arceos!"
         has_text=true
     else
@@ -34,7 +36,7 @@ else
     echo "No color"
 fi
 
-rm a.txt -f
+rm a.txt b.txt c.txt-f
 
 if [[ "$has_color" == true && "$has_text" == true ]]; then
     echo "print_with_color pass"
