@@ -36,6 +36,11 @@ else
     echo "No color"
 fi
 
+
+cat b.txt 
+echo "change "
+cat c.txt
+
 rm a.txt b.txt c.txt-f
 
 if [[ "$has_color" == true && "$has_text" == true ]]; then
