@@ -1,7 +1,11 @@
 use core::hash::Hasher;
+#[cfg(feature = "alloc")]
+extern crate alloc;
+#[cfg(feature = "alloc")]
 use alloc::vec::Vec;
 use core::hash::Hash;
 
+#[cfg(feature = "alloc")]
 pub struct HashMap<K,V> {
     data : Vec<Vec<(K,V)>>,
     capacity :usize,
@@ -22,7 +26,7 @@ impl Hasher for MyHahser {
         }
     }
 }
-
+#[cfg(feature = "alloc")]
 impl<K: Hash + Eq, V> HashMap<K, V> {
     pub fn new() -> Self {
         let capacity = 200 ;
@@ -66,21 +70,24 @@ impl<K: Hash + Eq, V> HashMap<K, V> {
         None
     }
     pub fn iter(&self) -> HashMapIterator<K, V> {
-        HashMapIterator {
+        HashMapIterator::<K, V> {
             map: self,
             bucket_index: 0,
             item_index: 0,
+            _marker: PhantomData,
         }
     }
 }
-
-
+#[cfg(feature = "alloc")]
+use core::marker::PhantomData;
+#[cfg(feature = "alloc")]
 pub struct HashMapIterator<'a, K, V> {
     map: &'a HashMap<K, V>,
     bucket_index: usize,
     item_index: usize,
+    _marker: PhantomData<(K, V)>,
 }
-
+#[cfg(feature = "alloc")]
 impl<'a, K, V> Iterator for HashMapIterator<'a, K, V> {
     type Item = (&'a K, &'a V);
 
