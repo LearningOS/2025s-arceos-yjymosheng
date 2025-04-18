@@ -109,7 +109,7 @@ fn vmexit_handler(ctx: &mut VmCpuRegisters) -> bool {
             ctx.guest_regs.gprs.set_reg(A0, 0x6688);
             ctx.guest_regs.sepc += 4;
             return false;
-        }
+        },
         _ => {
             panic!(
                 "Unhandled trap: {:?}, sepc: {:#x}, stval: {:#x}",
