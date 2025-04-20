@@ -1,0 +1,6 @@
+[m[37m[  0.062059 0 lab_allocator:42] [32madd_memory : start 0xffffffc080277000 , size 0x8000[m
+[m[37m[  0.064023 0 lab_allocator:42] [32madd_memory : start 0xffffffc08027f000 , size 0x10000[m
+[m[37m[  0.065953 0 lab_allocator:42] [32madd_memory : start 0xffffffc08028f000 , size 0x20000[m
+[m[37m[  0.067906 0 lab_allocator:42] [32madd_memory : start 0xffffffc0802af000 , size 0x40000[m
+[m[37m[  0.069942 0 lab_allocator:42] [32madd_memory : start 0xffffffc0802ef000 , size 0x80000[m
+[m[37m[  0.072071 0 lab_allocator:42] [32madd_memory : start 0xffffffc08036f000 , size 0x100000[m
